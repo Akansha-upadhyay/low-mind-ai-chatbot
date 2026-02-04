@@ -1,0 +1,57 @@
+# AI study buddy (Rule base chat Assistant )
+
+import datetime
+import time
+
+
+print("Welcome to FLOW-MIND ")
+print("\n How can I hepl you , Type 'BYE' to end the conversation ")
+
+
+
+name= input("Enter you name : ")
+presentHour = datetime.datetime.now().hour
+
+if 5 <= presentHour <= 11:
+    print("Good Morning ", name)
+
+elif 11 < presentHour <= 17:
+    print("Good AfterNoon", name)
+
+elif 17 < presentHour <= 20:
+    print("Good Evening ", name)
+
+else:
+    print("Good Night ", name)
+
+responses = {
+    "hello": "Hi, Welcome . How can I help you ?",
+    "how are you ": "I am very fine. Thank You ",
+    "who are you ": "I am a smart AI Based ChatBot ",
+    "motivate me": "Keep Going . Every bug of the project makes you a. better coder",
+    "happy": " Great to hear that",
+}
+
+
+def getResponseofbot(userQuestion):
+    userQuestion= userQuestion.lower()
+    for eachkey in responses:
+        if eachkey in userQuestion:
+            return responses[eachkey]
+        
+    return "SORRY ,\n I am not not able to answer this ,\n  I am  still in my learning mode"
+
+while True:
+    userInput = input("Please ask you Question: ")
+    reply = getResponseofbot(userInput)
+    print("FLOW-MIND :", reply)
+
+    if "bye" in userInput.lower():
+         break
+   
+
+
+
+
+
+
