@@ -1,57 +1,92 @@
-# AI study buddy (Rule base chat Assistant )
-
 import datetime
-import time
 
+print("Welcome to FLOW-MIND")
+print("Your AI Study Assistant")
+print("Type 'BYE' to exit\n")
 
-print("Welcome to FLOW-MIND ")
-print("\n How can I hepl you , Type 'BYE' to end the conversation ")
+name = input("Enter your name: ")
 
-
-
-name= input("Enter you name : ")
-presentHour = datetime.datetime.now().hour
-
-if 5 <= presentHour <= 11:
-    print("Good Morning ", name)
-
-elif 11 < presentHour <= 17:
-    print("Good AfterNoon", name)
-
-elif 17 < presentHour <= 20:
-    print("Good Evening ", name)
-
+hour = datetime.datetime.now().hour
+if 5 <= hour <= 11:
+    print("Good Morning", name)
+elif 11 < hour <= 17:
+    print("Good Afternoon", name)
+elif 17 < hour <= 20:
+    print("Good Evening", name)
 else:
-    print("Good Night ", name)
+    print("Good Night", name)
 
-responses = {
-    "hello": "Hi, Welcome . How can I help you ?",
-    "how are you ": "I am very fine. Thank You ",
-    "who are you ": "I am a smart AI Based ChatBot ",
-    "motivate me": "Keep Going . Every bug of the project makes you a. better coder",
-    "happy": " Great to hear that",
+subjects = {
+    "python": {
+        "topics": ["Basics", "Loops", "Functions", "OOP", "File Handling"],
+        "priority": 3
+    },
+    "ai": {
+        "topics": ["Search Algorithms", "Knowledge Representation", "ML Basics"],
+        "priority": 4
+    },
+    "dbms": {
+        "topics": ["Normalization", "SQL Queries", "Joins", "Indexing"],
+        "priority": 2
+    },
+    "maths": {
+        "topics": ["Linear Algebra", "Probability", "Statistics"],
+        "priority": 2
+    }
 }
 
+def generate_timetable(hours):
+    timetable = {}
+    total_priority = sum(subjects[s]["priority"] for s in subjects)
 
-def getResponseofbot(userQuestion):
-    userQuestion= userQuestion.lower()
-    for eachkey in responses:
-        if eachkey in userQuestion:
-            return responses[eachkey]
-        
-    return "SORRY ,\n I am not not able to answer this ,\n  I am  still in my learning mode"
+    for subject in subjects:
+        share = (subjects[subject]["priority"] / total_priority) * hours
+        timetable[subject] = round(share, 1)
+
+    return timetable
+
+def focus_topics(subject):
+    if subject in subjects:
+        topics = subjects[subject]["topics"]
+        return f"Focus on these topics first: {', '.join(topics[:3])}"
+    return "Subject not found."
+
+def ai_response(user_input):
+    user_input = user_input.lower()
+
+    if "timetable" in user_input:
+        hours = int(input("How many hours can you study today? "))
+        plan = generate_timetable(hours)
+        reply = "Here is your personalized study timetable:\n"
+        for sub, hrs in plan.items():
+            reply += f"- {sub.title()} : {hrs} hours\n"
+        return reply
+
+    if "focus" in user_input:
+        subject = input("Which subject? ").lower()
+        return focus_topics(subject)
+
+    if "motivate" in user_input:
+        return "Consistency beats motivation. Study even when you don’t feel like it."
+
+    if "help" in user_input:
+        return (
+            "I can help you with:\n"
+            "- Creating a study timetable\n"
+            "- Suggesting focus topics\n"
+            "- Study motivation\n"
+            "Commands: timetable, focus, motivate"
+        )
+
+    return "Ask me about timetable, focus topics, or type HELP."
 
 while True:
-    userInput = input("Please ask you Question: ")
-    reply = getResponseofbot(userInput)
-    print("FLOW-MIND :", reply)
+    user_input = input("\nYou: ")
 
-    if "bye" in userInput.lower():
-         break
-   
+    if "bye" in user_input.lower():
+        print("FLOW-MIND: Goodbye! Study smart 🚀")
+        break
 
-
-
-
-
+    reply = ai_response(user_input)
+    print("FLOW-MIND:", reply)
 
