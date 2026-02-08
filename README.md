@@ -1,22 +1,53 @@
-# FLOW-MIND AI Chatbot 🤖
+# FLOW-MIND 🤖📚  
+### AI Study Assistant (Python)
 
-FLOW-MIND AI Chatbot is a simple console-based chatbot built using Python.  
-It uses a rule-based approach to understand user input and respond with predefined answers.  
-The chatbot also greets users based on the current time, making the interaction more natural.
+FLOW-MIND is a **command-line AI-based Study Assistant** built using Python.  
+It helps students plan their study time effectively, prioritize subjects, focus on important topics, and stay motivated through an interactive chat-based interface.
 
-This project is designed for beginners who want to learn Python fundamentals and understand how basic chatbots work.
-
+---
 
 ## 🚀 Features
-- Time-based greetings (Morning, Afternoon, Evening, Night)
-- Rule-based conversational responses
-- Case-insensitive input handling
-- Simple and interactive command-line interface
-- Easy to extend with new questions and responses
+
+- ⏰ **Smart Time-Based Greeting**  
+  Greets the user based on the current time (Morning, Afternoon, Evening, Night).
+
+- 📅 **Personalized Study Timetable**  
+  Automatically allocates study hours to subjects based on priority.
+
+- 🎯 **Focus Topic Suggestions**  
+  Recommends the most important topics to study first for each subject.
+
+- 💡 **Motivational Support**  
+  Encourages consistency and disciplined study habits.
+
+- 💬 **Interactive Chat Interface**  
+  Simple commands make it easy to interact like a real AI assistant.
+
+---
+
+## 🧠 Subjects & Priorities
+
+| Subject | Topics Covered | Priority |
+|-------|---------------|----------|
+| Python | Basics, Loops, Functions, OOP, File Handling | ⭐⭐⭐ |
+| AI | Search Algorithms, Knowledge Representation, ML Basics | ⭐⭐⭐⭐ |
+| DBMS | Normalization, SQL Queries, Joins, Indexing | ⭐⭐ |
+| Maths | Linear Algebra, Probability, Statistics | ⭐⭐ |
+
+> Subjects with higher priority automatically receive more study time.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Python 3**
+- **datetime module**
+- Rule-based AI logic
+
+---
+
+## 📂 Project Structure
 
 
-## 🛠️ Technologies Used
-- Python 3
-- `datetime` module
 
 
