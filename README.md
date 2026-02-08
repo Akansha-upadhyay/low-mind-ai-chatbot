@@ -4,7 +4,7 @@
 FLOW-MIND is a **command-line AI-based Study Assistant** built using Python.  
 It helps students plan their study time effectively, prioritize subjects, focus on important topics, and stay motivated through an interactive chat-based interface.
 
----
+
 
 ## 🚀 Features
 
@@ -23,7 +23,7 @@ It helps students plan their study time effectively, prioritize subjects, focus 
 - 💬 **Interactive Chat Interface**  
   Simple commands make it easy to interact like a real AI assistant.
 
----
+
 
 ## 🧠 Subjects & Priorities
 
@@ -36,7 +36,7 @@ It helps students plan their study time effectively, prioritize subjects, focus 
 
 > Subjects with higher priority automatically receive more study time.
 
----
+
 
 ## 🛠️ Tech Stack
 
@@ -44,9 +44,6 @@ It helps students plan their study time effectively, prioritize subjects, focus 
 - **datetime module**
 - Rule-based AI logic
 
----
-
-## 📂 Project Structure
 
 
 
